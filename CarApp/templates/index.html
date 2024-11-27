@@ -1,0 +1,451 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon" class="favicon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' %}" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/myCustom.css' %}">
+
+    <title>Super car website</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav__logo">
+                <i class="ri-steering-fill"></i>
+                NextCar
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Bosh sahifa</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link ">Haqida</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#popular" class="nav__link">Elektromobillar</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#featured" class="nav__link">Brendlar</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <!-- Togglar Button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <!--************* MAIN CODE ****************-->
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="shapeX shape__big"></div>
+            <div class="shapeX shape__small"></div>
+
+
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Eng mashhur moshina
+                    </h1>
+                    <h2 class="home__subtitle">
+                        {{ car1.brand }} 
+                    </h2>
+                    <h3 class="home__elec">
+                        <i class="ri-flashlight-fill"></i>
+                        {{ car1.name }}
+                    </h3>
+                </div>
+
+                <img src="{{ car1.image.url }}" alt="" class="home__img">
+                <div class="home__car">
+                    <div class="home__car-data">
+                        <div class="home__car-icon">
+                            <i class="ri-temp-cold-line"></i>
+                        </div>
+                        <h2 class="home__car-number">{{ car1.time }} s</h2>
+                        <h3 class="home__car-name">0-100 km/h</h3>
+
+                    </div>
+
+                    <div class="home__car-data">
+                        <div class="home__car-icon">
+                            <i class="ri-dashboard-2-line"></i>
+                        </div>
+                        <h2 class="home__car-number">{{ car1.power }}</h2>
+                        <h3 class="home__car-name">POWER (HP)</h3>
+
+                    </div>
+                    <div class="home__car-data">
+                        <div class="home__car-icon">
+                            <i class="ri-flashlight-fill"></i>
+                        </div>
+                        <h2 class="home__car-number">{{ car1.speed }} km/h</h2>
+                        <h3 class="home__car-name">MAX. SPEED</h3>
+
+                    </div>
+
+                </div>
+
+                <a href="#" class="home__button">START</a>
+
+                <div class="slider__bg">
+                <div class="slider__bg-navBtn active"></div>
+                <div class="slider__bg-navBtn"></div>
+                <div class="slider__bg-navBtn"></div>
+                <div class="slider__bg-navBtn"></div>
+                <div class="slider__bg-navBtn"></div>
+                
+                </div>
+
+
+
+            </div>
+            <div class="home__social">
+                <a href="#" class="home__social-icon"><i class="ri-facebook-fill"></i></a>
+                <a href="#" class="home__social-icon"><i class="ri-instagram-fill"></i></a>
+                <a href="#" class="home__social-icon"><i class="ri-twitter-fill"></i></a>
+
+            </div>
+
+        </section>
+         <!--==================== GALLERY BANNER ====================-->
+         <section class="gallery section">
+            <div class="gallery__container container grid">
+                <video class="video__slide active" src="{% static 'assets/video/vid_1.mp4' %}" autoplay muted loop></video>
+                <video class="video__slide" src="{% static 'assets/video/vid_4.mp4' %}" autoplay muted loop></video>
+                <video class="video__slide" src="{% static 'assets/video/vid_3.mp4' %}" autoplay muted loop></video>
+                <video class="video__slide" src="{% static 'assets/video/vid_2.mp4' %}" autoplay muted loop></video>
+                <video class="video__slide" src="{% static 'assets/video/vid_5.mp4' %}" autoplay muted loop></video>
+            
+            </div>
+
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__group">
+                    <img src="{% static 'assets/img/about.png' %}" alt="" class="about__img">
+
+                    <div class="about__card">
+                        <h3 class="about__card-title">2.500+</h3>
+                        <p class="about__card-description">Mashhur marshrutlar bo'ylab joylashtirilgan superchargelar</p>
+                    </div>
+                </div>
+
+                <div class="about__data">
+                    <h2 class="section__title about__title">Sport mashinalar<br>kelajak texnologiyasi</h2>
+                    <p class="about__description">Kelajakni taniqli brendlar tomonidan ishlab chiqarilgan yuqori samarali elektromobillar bilan ko'ring. 
+                    Ular uzoq vaqt davom etadigan yangi va innovatsion platformalar bilan futuristik inshootlar va dizaynlarni o'z ichiga oladi.</p>
+
+                    <a href="#" class="button">Ko'proq</a>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+        <!--==================== POPULAR ====================-->
+        <section class="popular section" id="popular">
+            <h2 class="section__title">
+                Eng mashhur elektromobillar
+            </h2>
+            <div class="popular__container container swiper">
+                <div class="swiper-wrapper">
+                    {% for i in electric_cars %}
+                    <article class="popular__card swiper-slide">
+                        <div class="shapeX shape__smaller"></div>
+
+                        <h1 class="popular__title">{{ i.brand }}</h1>
+                        <h3 class="popular__subtitle">{{ i.name }}</h3>
+
+                        <img src="{{ i.image.url }}" alt="" class="popular__img">
+
+                        <div class="popular__data">
+                            <div class="popular__data-group">
+                                <i class="ri-dashboard-2-line"></i> {{ i.time }} sec
+                            </div>
+                            <div class="popular__data-group">
+                                <i class="ri-exchange-funds-line"></i> {{ i.speed }} Km/h
+                            </div>
+                            <div class="popular__data-group">
+                                <i class="ri-charging-pile-2-line"></i> {{ i.engine }}
+                            </div>
+                        </div>
+
+                        <h3 class="popular__price">$ {{ i.price }}</h3>
+                        <button class="button popular__button">
+                            <i class="ri-shopping-bag-2-line"></i>
+                        </button>
+
+                    </article>
+                    {% endfor %}
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </section>
+
+        <!--==================== FEATURES ====================-->
+        <section class="features section">
+            <h2 class="section__title">
+                Porsche xususiyatlari
+            </h2>
+
+            <div class="features__container container grid">
+                <div class="features__group">
+                    <img src="{% static 'assets/img/features.png' %}" alt="" class="features__img">
+
+
+                    <div class="features__card features__card-1">
+                        <h3 class="features__card-title">800KW</h3>
+                        <p class="features__card-description">Tezkor <br>quvvatlash</p>
+                    </div>
+
+                    <div class="features__card features__card-2">
+                        <h3 class="features__card-title">350</h3>
+                        <p class="features__card-description">Km <br> masofa bosib o'tadi</p>
+                    </div>
+                    <div class="features__card features__card-3">
+                        <h3 class="features__card-title">480</h3>
+                        <p class="features__card-description">Km <br> to'liq zaryad bilan</p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="{% static 'assets/img/map.svg' %}" alt="" class="features__map">
+
+        </section>
+
+        <!--==================== FEATURED ====================-->
+        <section class="featured section" id="featured">
+            <h2 class="section__title">Zamonaviy avtomobillar</h2>
+            <div class="featured__container container">
+                <ul class="featured__filters">
+                    {% for i in brands %}
+                    <li>
+                        <button class="featured__item" data-filter=".{{ i.name }}">
+                            <img src="{{ i.logo.url }}" alt="">
+
+                        </button>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="featured__content grid">
+                    {% for i in cars_by_brand %}
+                    <article class="featured__card mix {{ i.brand }}">
+                        <div class="shape shape__smaller"></div>
+
+                        <h1 class="featured__title">{{ i.brand }}</h1>
+                        <h3 class="featured__subtitle">{{ i.name }}</h3>
+                        <img src="{{ i.image.url }}" alt="" class="featured__img">
+                        <h3 class="featured__price">${{ i.price }}</h3>
+                        <button class="button featured__button">
+                            <i class="ri-shopping-bag-2-line"></i>
+                        </button>
+
+                    </article>
+                    {% endfor %}
+                   
+                </div>
+            </div>
+
+        </section>
+       
+
+        <!--==================== OFFER ====================-->
+        <section class="offer section">
+
+            <div class="offer__container container grid">
+
+                <img src="{% static 'assets/img/offer-bg.png' %}" alt="" class="offer__bg">
+
+                <div class="offer__data">
+                    <h2 class="section__title offer__title">
+                        Do You Want To Receive <br> Special Offers?
+                    </h2>
+
+                    <p class="offer__description">Be the first to receive all the information about our
+                        products and new cars by email by subscribing to our
+                        mailing list.</p>
+
+                    <a href="#" class="button">Subscribe Now</a>
+                </div>
+
+                <img src="{% static 'assets/img/offer.png' %}" alt="" class="offer__img">
+
+            </div>
+
+        </section>
+
+        <!--==================== LOGOS ====================-->
+        <section class="logos section">
+            <div class="logos__container container grid">
+                <div class="logos__content">
+                    <img src="{% static 'assets/img/logo1.png' %}" alt="" class="logos__img">
+                </div>
+                <div class="logos__content">
+                    <img src="{% static 'assets/img/logo6.png' %}" alt="" class="logos__img">
+                </div>
+                <div class="logos__content">
+                    <img src="{% static 'assets/img/logo5.png' %}" alt="" class="logos__img">
+                </div>
+                <div class="logos__content">
+                    <img src="{% static 'assets/img/logo4.png' %}" alt="" class="logos__img">
+                </div>
+                <div class="logos__content">
+                    <img src="{% static 'assets/img/logo3.png' %}" alt="" class="logos__img">
+                </div>
+                <div class="logos__content">
+                    <img src="{% static 'assets/img/logo2.png' %}" alt="" class="logos__img">
+                </div>
+
+            </div>
+
+
+
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="shapeX shape__big"></div>
+        <div class="shapeX shape__small"></div>
+
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">
+                    <i class="ri-steering-line"></i>
+                    NextCar
+                </a>
+                <p class="footer__description">
+                    We offer the best cars of <br>
+                    the most recognized brands in <br>
+                    the world.
+                </p>
+            </div>
+
+
+            <div class="footer__content">
+
+                <h3 class="footer__title">Company </h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#" class="footer__links">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links">Cars</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links">History</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information </h3>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#" class="footer__links">Request a quote</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links">Find a dealer</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links">Contact us</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__links">Services</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title"> Follow us </h3>
+
+                <ul class="footer__social">
+                    <a href="" target="_blank" class="footer__social-link">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="" target="_blank" class="footer__social-link">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="" target="_blank" class="footer__social-link">
+                        <i class="ri-twitter-line"></i>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <span class="footer__copy">
+            &#169; <a target="_blank" href="abdullahmoin.web.app" class="footer__dev-link">abdullah-moin.</a> All rigths
+            reserved
+            <p id="date"></p>
+        </span>
+    </footer>
+
+
+    <!--========== SCROLL UP ==========-->
+
+    <a href="" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+
+    <!--=============== SCROLL REVEAL - PAGE ANNIMATION ===============-->
+    <script src="{% static 'assets/js/scrollrevealAnimation.min.js' %}"></script>
+
+    <!--=============== SWIPER JS - PRODUCT SLIDER ===============-->
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+
+    <!--=============== MIXITUP JS - FILTER PRODUCT ===============-->
+    <script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+</body>
+
+
+
+</html>
